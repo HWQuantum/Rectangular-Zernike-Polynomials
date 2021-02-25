@@ -1,6 +1,7 @@
 """Main module."""
 import numpy as np
 
+
 def radial_coeff(m, n, l):
     '''Radial coefficient in the sum for the radial part of the Zernike polynomial
     '''
@@ -64,6 +65,7 @@ def zernike_cartesian(m, n):
 
         return poly
 
+
 def rect_coords(w, h):
     """Get the rectangle coordinates with area pi for the given width and height
     Returns a numpy array with the correct coordinates
@@ -73,6 +75,7 @@ def rect_coords(w, h):
     norm_w = norm_h * ratio
     x, y = np.mgrid[-norm_w/2:norm_w/2:w*1j, -norm_h/2:norm_h/2:h*1j]
     return x, y
+
 
 def gram_schmidt(modes, x, y):
     """Perform a gram-schmidt orthonormalisation over the given modes. 
@@ -84,8 +87,9 @@ def gram_schmidt(modes, x, y):
     for i in range(len(mode_rep)):
         m = mode_rep[i] - sum(np.sum(m * mode_rep[i]) for m in new_modes[:i])
         new_modes.append(m)
-    
+
     return [m/(np.sqrt(np.pi*np.sum(m*m))) for m in new_modes]
+
 
 def rectangular_zernike_modes(n_modes, w, h):
     """Given a number of modes to generate, a width and a height return a list containing 
