@@ -7,9 +7,10 @@ def radial_coeff(m: int, n: int, l: int) -> int:
     '''Radial coefficient in the sum for the radial part of the Zernike polynomial
     '''
     if (n - m) % 2 == 0:
-        return ((np.power(-1, l) * np.math.factorial(n - l)) /
-                (np.math.factorial(l) * np.math.factorial(0.5 * (n + m) - l) *
-                 np.math.factorial(0.5 * (n - m) - l)))
+        return int(
+            ((np.power(-1, l) * np.math.factorial(n - l)) /
+             (np.math.factorial(l) * np.math.factorial(0.5 * (n + m) - l) *
+              np.math.factorial(0.5 * (n - m) - l))))
     else:
         return 0
 
