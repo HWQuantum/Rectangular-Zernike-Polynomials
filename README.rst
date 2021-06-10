@@ -12,7 +12,7 @@ Generate orthogonal zernike polynomials over a rectangle
 Example
 -------
 
-To generate 10 modes over a rectangular with width 200 and height 300:
+To generate 10 modes over a rectangle with width 200 and height 300:
 
 .. code:: python
 
