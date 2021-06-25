@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 """The setup script."""
 
 from setuptools import setup, find_packages
@@ -12,9 +11,9 @@ with open('HISTORY.rst') as history_file:
 
 requirements = ["numpy>=1.19"]
 
-setup_requirements = []
+setup_requirements = ['pytest-runner']
 
-test_requirements = []
+test_requirements = ['pytest>=3']
 
 setup(
     author="Max Tyler",

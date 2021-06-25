@@ -1,9 +1,10 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 
 pkgs.mkShell {
   buildInputs = [
     pkgs.hello
-    (pkgs.python3.withPackages (ps: with ps; [numpy python-language-server pyls-mypy]))
+    (pkgs.python3.withPackages
+      (ps: with ps; [ numpy python-language-server pyls-mypy pytest ]))
     # keep this line if you use bash
     pkgs.nixfmt
     pkgs.bashInteractive
